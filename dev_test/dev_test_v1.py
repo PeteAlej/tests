@@ -2,19 +2,18 @@
 
 import fnmatch
 import os, shutil
-import pandas
 import time
 import keyboard
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import openpyxl as xl
 
-dir = os.path.dirname(__file__)
-xls_path = os.path.join(dir,'Processed\\')
+#dir = os.path.dirname(__file__)
+#xls_path = os.path.join(dir,'Processed\\')
 
 # Cambiar los paths para hacer pruebas en otras computadoras
 src_path = r"C:/Users/Peter/Documents/GitHub/tests/dev_test/"					# Directorio donde se van a "crear" los archivos
-#xls_path = r"C:/Users/Peter/Documents/GitHub/tests/dev_test/Processed/"			# Directorio donde se van a mover los archivos .xls*
+xls_path = r"C:/Users/Peter/Documents/GitHub/tests/dev_test/Processed/"			# Directorio donde se van a mover los archivos .xls*
 nonxls_path = r"C:/Users/Peter/Documents/GitHub/tests/dev_test/Not_applicable/"	# Directorio donde se van a mover los archivos != .xls*
 directory = "."
 
@@ -75,6 +74,7 @@ class myHandler(FileSystemEventHandler):
 		#if event =
 
 if __name__ == "__main__":	# Requerimiento, útil si se llega a importar a otro módulo.
-	directory = input("Establish the directory to be watched: ")
-	wt = watcher(directory, myHandler())
-	wt.execute()
+	while True:
+		directory = input("Establish the directory to be watched: ")
+		wt = watcher(directory, myHandler())
+		wt.execute()

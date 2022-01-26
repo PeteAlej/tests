@@ -4,6 +4,7 @@ import fnmatch
 import os, shutil
 import time
 import keyboard
+# Para utilizar el módulo de watchdog es necesario el módulo de PyYAML y posiblemente LibYAML, argh, argparse y pathtools
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import openpyxl as xl
